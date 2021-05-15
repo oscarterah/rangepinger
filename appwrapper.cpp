@@ -164,7 +164,7 @@ void AppWrapper::looper(QString &m_userinput_i, QString &m_userinput_j, QString 
             {
                 m_values = "104."+QString::number(i)+"."+QString::number(j)+"."+QString::number(k);
 
-                QString pinger = "ping -c1 -s1 -i 0.2 "+m_values+" > /dev/null 2>&1";
+                QString pinger = "ping -c1 -s1 -w 1 -i 0.1 "+m_values+" > /dev/null 2>&1";
 
                 std::string pingerstr = pinger.toStdString();
                 const char* p = pingerstr.c_str();
